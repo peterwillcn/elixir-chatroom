@@ -1,0 +1,16 @@
+<div class="top notice"><%= top_notice() %> </div>
+<div class="history"></div>
+<div class="message">
+  <%= if @is_signin do %>
+    <input class="content" placeholder="回车发送聊天内容，点击聊天室图标有惊喜！"  />
+  <% else %>
+    <div class="visitor">
+      <%= gettext "You need to pass the KYC and deposit at least once If you want to chat" %>
+    </div>
+  <% end %>
+</div>
+<script>
+window.userToken = "<%= @channel_token %>";
+username = "<%= @conn.assigns[:username] %>";
+isAdmin= "<%= @conn.assigns[:is_admin] %>";
+</script>
